@@ -1,0 +1,18 @@
+<h1 class="form-title">Add New Video</h1>
+<%= form_for(@video, :url => { :action => 'create' }) do |f| %>
+  <fieldset>
+    <label for="title">
+      Title:
+      <%= f.text_field :title %>
+    </label>
+    <label for="embed_id">
+      Embed ID:
+      <%= f.text_field :embed_id %>
+    </label>
+    <label for="source">
+      Source:
+      <%= f.text_field :source %>
+    </label>
+    <%= f.submit "Create" %>
+  </fieldset>
+<% end %>

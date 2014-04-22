@@ -11,3 +11,69 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  background: rgb(0,0,0);
+
+}
+
+.video-float-box {
+  position: absolute;
+  left: 250px;
+}
+
+#video-container {
+  margin: 150px auto;
+  width: 600px;
+  height: 600px;
+
+  -webkit-perspective: 3000px;
+}
+
+
+#video-row-1 {
+  z-index: 0;
+}
+
+#video-row-2 {
+  z-index: 1;
+}
+
+#video-row-3 {
+  z-index: 2;
+}
+
+#video-row-1, #video-row-2, #video-row-3 {
+  height: 300px;
+  width: 600px;
+  margin: 0 auto;
+  -webkit-transform: translateZ(-500px);
+}
+
+#video-row-1, #video-row-3 {
+  -webkit-transform-style: preserve-3d;
+  -webkit-animation-name: y-spin;
+  -webkit-animation-duration: 30s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+#video-row-2 {
+  -webkit-transform-style: preserve-3d;
+  -webkit-animation-name: y-backspin;
+  -webkit-animation-duration: 30s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes y-spin {
+  0% { -webkit-transform: rotateY(0deg); }
+  50% { -webkit-transform: rotateY(180deg); }
+  100% { -webkit-transform: rotateY(360deg); }
+}
+
+@-webkit-keyframes y-backspin {
+  0% { -webkit-transform: rotateY(360deg); }
+  50% { -webkit-transform: rotateY(180deg); }
+  100% { -webkit-transform: rotateY(0deg); }
+}

@@ -1,0 +1,8 @@
+<h1 class="page-title">
+  Detail Page for Video: <%= @video.title %>
+</h1>
+<% if @video.source == "Youtube" %>
+  <div id="video-<%= video.embed_id %>" class="video-float-box"></div>
+<% end %>
+<p>id: <%= @video.embed_id %></p>
+<p>source: <%= @video.source %></p>

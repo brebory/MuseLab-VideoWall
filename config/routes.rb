@@ -1,11 +1,18 @@
 MuseLabVideowall::Application.routes.draw do
+  root :to => "video#list"
+
   get "video/list"
 
-  get "video/add"
+  get "video/new"
+
+  post "video/create"
 
   get "video/:id/edit"
 
+  get "video/:id" => "video#show"
+
   put "video/:id" => "video#update"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
